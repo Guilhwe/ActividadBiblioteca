@@ -1,24 +1,22 @@
 class Libro:
+    todos_los_libros=[]
     def __init__(self, titulo ='', autor='', año_de_publicacion = 0):
         self.titulo = titulo
         self.autor = autor
         self.año_de_publicacion = año_de_publicacion
         self.disponible = True
+        Libro.todos_los_libros.append(self)
     
     def __str__(self):
         return f'Libro :{self.titulo} | Autor :{self.autor} | Año: {self.año_de_publicacion}'
-    @property
+   
     def alquiler_libro(self):
         self.disponible = False
     
-    @property
-    def verificar_disponibilidad(self):
-        libros_disponibles = [libro for libro in Libro.libro if libro.año_de_publicacion == libro.disponible]
+    @staticmethod
+    def verificar_disponibilidad(año):
+        libros_disponibles = [libro for libro in Libro.todos_los_libros if libro.año_de_publicacion == año and libro.disponible]
         return libros_disponibles
-    
-
-
-
 
 
 
