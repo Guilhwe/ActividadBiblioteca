@@ -4,12 +4,25 @@ class Libro:
         self.autor = autor
         self.año_de_publicacion = año_de_publicacion
         self.disponible = True
-
+    
     def __str__(self):
         return f'Libro :{self.titulo} | Autor :{self.autor} | Año: {self.año_de_publicacion}'
-    
+    @property
     def alquiler_libro(self):
         self.disponible = False
+    
+    @property
+    def verificar_disponibilidad(self):
+        libros_disponibles = [libro for libro in Libro.libro if libro.año_de_publicacion == libro.disponible]
+        return libros_disponibles
+    
+
+
+
+
+
+
+
 
 libro1=Libro('Harry Porker','Guilherme', 680,)
 libro2=Libro('Billy y Mandy', 'Nico', 2000)
