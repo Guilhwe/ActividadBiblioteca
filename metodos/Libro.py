@@ -27,6 +27,3 @@ libro1=Libro('Harry Porker','Guilherme', 680,)
 libro2=Libro('Billy y Mandy', 'Nico', 2000)
 
 
-libros_disponivles_680 = Libro.verificar_disponibilidad(680)
-for libro in libros_disponivles_680:
-    print(libro)
